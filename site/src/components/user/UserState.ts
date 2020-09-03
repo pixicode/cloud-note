@@ -8,6 +8,7 @@ export enum Status {
 interface UserState {
     status: Status;
     statusReason?: string;
+    userName?: string;
 }
 
 export interface UserStateProps {
@@ -16,7 +17,7 @@ export interface UserStateProps {
     setUserStatus: (x: Status) => void;
 }
 
-export const newUserState = () => {
+export const newUserState = (): UserState => {
     return {
         status: Status.NOT_AUTHENTICATED
     }
